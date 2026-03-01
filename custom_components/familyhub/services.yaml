@@ -1,0 +1,74 @@
+upload_media:
+  name: Upload media to Family Hub
+  description: Uploads an image or video to Family Hub
+  fields:
+    entity_id:
+      required: true
+      selector:
+        entity:
+          domain: camera
+    path:
+      required: true
+      selector:
+        text:
+    content_type:
+      required: false
+      selector:
+        text:
+execute:
+  name: Execute raw SmartThings command
+  description: Sends a raw command to the Family Hub via SmartThings
+  fields:
+    component:
+      required: true
+      selector:
+        text:
+    capability:
+      required: true
+      selector:
+        text:
+    command:
+      required: true
+      selector:
+        text:
+    arguments:
+      required: false
+      selector:
+        object:
+set_ice_maker:
+  name: Set ice maker state
+  description: Turns ice maker on/off
+  fields:
+    state:
+      required: true
+      selector:
+        select:
+          options:
+            - on
+            - off
+reset_filter:
+  name: Reset water filter counter
+  description: Resets the filter life counter on the refrigerator
+  fields: {}
+set_power_cool:
+  name: Set Power Cool
+  description: Turns Power Cool mode on/off
+  fields:
+    state:
+      required: true
+      selector:
+        select:
+          options:
+            - on
+            - off
+set_power_freeze:
+  name: Set Power Freeze
+  description: Turns Power Freeze mode on/off
+  fields:
+    state:
+      required: true
+      selector:
+        select:
+          options:
+            - on
+            - off
