@@ -4,6 +4,8 @@ on:
     branches:
       - '**'
   pull_request:
+  schedule:
+    - cron: "0 3 * * *"
 jobs:
   lint-and-syntax:
     runs-on: ubuntu-latest
