@@ -9,6 +9,7 @@ on:
 
 jobs:
   sync:
+    if: ${{ github.event.repository.has_wiki }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
