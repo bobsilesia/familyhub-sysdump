@@ -31,7 +31,7 @@ jobs:
         run: pip install ruff black isort flake8
 
       - name: Run ruff fix
-        run: ruff --fix .
+        run: ruff check --fix .
 
       - name: Run black (79 cols)
         run: black . --line-length 79
