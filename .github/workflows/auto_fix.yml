@@ -1,0 +1,43 @@
+name: Auto Fix
+
+on:
+  pull_request:
+    paths-ignore:
+      - '.github/workflows/**'
+
+jobs:
+  autofix:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install tools
+        run: pip install ruff black isort flake8
+
+      - name: Run ruff fix
+        run: ruff --fix .
+
+      - name: Run black (79 cols)
+        run: black . --line-length 79
+
+      - name: Run isort (79 cols)
+        run: isort . --line-length 79
+
+      - name: Lint check (non-blocking)
+        run: flake8 custom_components/familyhub || true
+
+      - name: Auto commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "style: auto format (ruff/black/isort) via CI"
