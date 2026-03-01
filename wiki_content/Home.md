@@ -20,3 +20,15 @@ This wiki is synchronized automatically from the repository on each push.
 
 Sync: wykonywany przez workflow „Wiki Sync”.
 Ostatnie wydanie: sprawdź Releases lub odznakę „Last release date”.
+
+## Release & CI policy
+- Pre‑publish (wymagane):
+  - `flake8 custom_components/familyhub`
+  - `python3 -m compileall -q custom_components/familyhub`
+  - `ruff check .`
+  - `mypy custom_components/familyhub`
+- Automatyka:
+  - CI: każdy push/PR (fix: autoflake → ruff → black → isort; lint: flake8, składnia: compileall)
+  - Auto Fix: na gałęziach/PR poza main (auto‑commit zmian formatowania)
+  - Auto Branch Fix: harmonogram 02:00 UTC + ręczny dispatch (otwiera PR z poprawkami)
+  - Wiki Sync: synchronizacja wiki_content do repo wiki na push i ręcznie (workflow_dispatch)
