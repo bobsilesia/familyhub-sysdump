@@ -6,6 +6,7 @@ on:
       - 'wiki_content/**'
     branches:
       - '**'
+  workflow_dispatch:
 
 jobs:
   sync:
