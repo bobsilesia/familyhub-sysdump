@@ -1,5 +1,13 @@
 # Samsung Family Hub — Home Assistant Integration (HACS)
 
+[![License](https://img.shields.io/github/license/bobsilesia/familyhubdump?color=blue)](LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/bobsilesia/familyhubdump?style=flat-square&color=b44e88&label=Latest%20release)](https://github.com/bobsilesia/familyhubdump/releases)
+[![CI](https://github.com/bobsilesia/familyhubdump/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bobsilesia/familyhubdump/actions/workflows/ci.yml)
+[![Downloads](https://img.shields.io/github/downloads/bobsilesia/familyhubdump/total.svg)](https://github.com/bobsilesia/familyhubdump/releases)
+[![Stars](https://img.shields.io/github/stars/bobsilesia/familyhubdump?style=flat-square)](https://github.com/bobsilesia/familyhubdump/stargazers)
+[![Open issues](https://img.shields.io/github/issues/bobsilesia/familyhubdump?style=flat-square)](https://github.com/bobsilesia/familyhubdump/issues)
+[![Last commit](https://img.shields.io/github/last-commit/bobsilesia/familyhubdump?style=flat-square)](https://github.com/bobsilesia/familyhubdump/commits/main)
+
 HACS integration for Samsung Family Hub (Tizen >3.x) via SmartThings API: sensors, camera snapshot (“View Inside”), and media upload service.
 
 Repository: https://github.com/bobsilesia/familyhubdump
