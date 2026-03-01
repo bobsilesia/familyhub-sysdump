@@ -18,10 +18,11 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install quality tools
-        run: pip install flake8 ruff black isort
+        run: pip install flake8 ruff black isort autoflake
       - name: Auto fix (in-runner, no commit)
         run: |
           ruff check --fix .
+          autoflake --remove-all-unused-imports --in-place --recursive .
           black . --line-length 79
           isort . --line-length 79
       - name: Lint

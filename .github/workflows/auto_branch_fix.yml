@@ -23,11 +23,12 @@ jobs:
           python-version: "3.11"
 
       - name: Install tools
-        run: pip install ruff black isort
+        run: pip install ruff black isort autoflake
 
       - name: Run auto fixes
         run: |
           ruff check --fix .
+          autoflake --remove-all-unused-imports --in-place --recursive .
           black . --line-length 79
           isort . --line-length 79
 

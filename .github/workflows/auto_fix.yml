@@ -28,10 +28,12 @@ jobs:
           python-version: "3.11"
 
       - name: Install tools
-        run: pip install ruff black isort flake8
+        run: pip install ruff black isort flake8 autoflake
 
       - name: Run ruff fix
         run: ruff check --fix .
+      - name: Remove unused imports (autoflake)
+        run: autoflake --remove-all-unused-imports --in-place --recursive .
 
       - name: Run black (79 cols)
         run: black . --line-length 79
