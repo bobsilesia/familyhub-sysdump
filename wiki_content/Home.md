@@ -17,3 +17,5 @@ This wiki is synchronized automatically from the repository on each push.
 - Auto Fix: na gałęziach/PR (poza main) – formatowanie i automatyczne commity.
 - Auto Branch Fix: cyklicznie/ręcznie – PR z poprawkami (ruff/black/isort/autoflake).
 - Zasady pre‑publish: flake8, compileall, ruff, mypy; wersjonowanie SemVer; Release Notes i asset ZIP dla HACS.
+
+Sync: wykonywany przez workflow „Wiki Sync”.
