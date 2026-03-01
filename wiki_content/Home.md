@@ -2,6 +2,8 @@
 
 Welcome to the wiki for the Samsung Family Hub Home Assistant integration (HACS).
 
+Repository: https://github.com/bobsilesia/familyhubdump
+
 ## Contents
 - Installation
 - Configuration (PAT/OAuth)

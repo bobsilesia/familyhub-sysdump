@@ -2,6 +2,8 @@
 
 HACS integration for Samsung Family Hub (Tizen >3.x) via SmartThings API: sensors, camera snapshot (“View Inside”), and media upload service.
 
+Repository: https://github.com/bobsilesia/familyhubdump
+
 ## Requirements
 - Home Assistant Core 2025.2+
 - SmartThings Hub (recommended)
@@ -9,7 +11,7 @@ HACS integration for Samsung Family Hub (Tizen >3.x) via SmartThings API: sensor
 
 ## Installation (HACS)
 1. Ensure the repository contains `custom_components/familyhub`.
-2. In HACS, add the repository as a Custom Repository.
+2. In HACS, add the repository as a Custom Repository: `bobsilesia/familyhubdump`.
 3. Install the integration and restart Home Assistant.
 
 ## Installation (Manual)
