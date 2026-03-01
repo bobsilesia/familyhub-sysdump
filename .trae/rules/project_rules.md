@@ -3,6 +3,7 @@ Zasady projektu: Samsung Family Hub (HACS)
 Wydania
 - Używaj SemVer: patch dla poprawek, minor dla nowych funkcji, major dla stabilnej pełnej integracji
 - Każde wydanie ma Release Notes w GitHub Release zgodne ze zmianami
+ - Preferencja: po wydaniu patch następnym krokiem jest minor (np. 1.0.9 → 1.1.0)
 
 Autoryzacja
 - Preferuj SmartApp OAuth dla pełnych uprawnień; PAT używaj do szybkiej konfiguracji
