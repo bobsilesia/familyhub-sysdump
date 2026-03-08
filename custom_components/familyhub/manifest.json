@@ -7,5 +7,6 @@
   "requirements": [],
   "codeowners": [
     "@robertpsiurski"
-  ]
+  ],
+  "documentation": "https://github.com/bobsilesia/familyhubdump"
 }

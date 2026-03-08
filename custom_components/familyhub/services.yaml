@@ -38,37 +38,55 @@ execute:
 set_ice_maker:
   name: Set ice maker state
   description: Turns ice maker on/off
+  target:
+    entity:
+      domain: sensor
   fields:
     state:
       required: true
       selector:
         select:
           options:
-            - on
-            - off
+            - label: "On"
+              value: "on"
+            - label: "Off"
+              value: "off"
 reset_filter:
   name: Reset water filter counter
   description: Resets the filter life counter on the refrigerator
+  target:
+    entity:
+      domain: sensor
   fields: {}
 set_power_cool:
   name: Set Power Cool
   description: Turns Power Cool mode on/off
+  target:
+    entity:
+      domain: sensor
   fields:
     state:
       required: true
       selector:
         select:
           options:
-            - on
-            - off
+            - label: "On"
+              value: "on"
+            - label: "Off"
+              value: "off"
 set_power_freeze:
   name: Set Power Freeze
   description: Turns Power Freeze mode on/off
+  target:
+    entity:
+      domain: sensor
   fields:
     state:
       required: true
       selector:
         select:
           options:
-            - on
-            - off
+            - label: "On"
+              value: "on"
+            - label: "Off"
+              value: "off"
