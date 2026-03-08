@@ -16,6 +16,7 @@ Integracja
 CI
 - Uruchamiaj lint i sprawdzenie składni przy każdym push/PR (flake8 + compileall) na wszystkich gałęziach
 - Auto Fix na PR i push (z wyłączeniem main): ruff --fix, black (79), isort (79), auto-commit
+ - Auto Fix na PR i push (z wyłączeniem main): ruff format + ruff --fix (I, itp.), auto-commit
 - Sync wiki: workflow warunkowy (has_wiki), permissions contents: write, skip gdy brak uprawnień
 - Przed wypchnięciem zawsze uruchom lokalnie: `flake8 custom_components/familyhub` oraz `python3 -m compileall -q custom_components/familyhub`
 - Przed publikacją uruchom dodatkowo: `ruff check .` oraz `mypy custom_components/familyhub`
@@ -51,6 +52,6 @@ Packaging (HACS)
 - README i odznaki renderowane w HACS po stronie repozytorium (ZIP nie musi zawierać README).
 
 Auto Fix / Auto Branch Fix
-- Kolejność kroków: `autoflake` → `ruff --fix` → `black` (79) → `isort` (79).
+- Kolejność kroków: `autoflake` → `ruff format` → `ruff --fix` (w tym sortowanie importów).
 - PR/push poza main: automatyczny commit poprawek; na main tylko sprawdzanie.
 - Autofix PR: włącz auto‑merge po zielonych checkach (preferuj squash).

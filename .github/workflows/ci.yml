@@ -18,13 +18,12 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install quality tools
-        run: pip install flake8 ruff black isort autoflake mypy
+        run: pip install flake8 ruff autoflake mypy
       - name: Auto fix (in-runner, no commit)
         run: |
           autoflake --remove-all-unused-imports --in-place --recursive .
+          ruff format .
           ruff check --fix .
-          black . --line-length 79
-          isort . --line-length 79
       - name: Formatting check (ruff)
         run: ruff format --check .
       - name: Lint check (ruff)
