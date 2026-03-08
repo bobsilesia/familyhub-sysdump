@@ -15,11 +15,10 @@ Integracja
 
 CI
 - Uruchamiaj lint i sprawdzenie składni przy każdym push/PR (flake8 + compileall) na wszystkich gałęziach
-- Auto Fix na PR i push (z wyłączeniem main): ruff --fix, black (79), isort (79), auto-commit
- - Auto Fix na PR i push (z wyłączeniem main): ruff format + ruff --fix (I, itp.), auto-commit
+- Auto Fix na PR i push (z wyłączeniem main): ruff format + ruff --fix (I, itp.), auto-commit
 - Sync wiki: workflow warunkowy (has_wiki), permissions contents: write, skip gdy brak uprawnień
 - Przed wypchnięciem zawsze uruchom lokalnie: `flake8 custom_components/familyhub` oraz `python3 -m compileall -q custom_components/familyhub`
-- Przed publikacją uruchom dodatkowo: `ruff check .` oraz `mypy custom_components/familyhub`
+- Przed publikacją uruchom dodatkowo: `ruff check .` oraz `ruff format .` oraz `mypy custom_components/familyhub`
 
 Rozwój i Jakość Kodu (CI/CD)
 - Linting & Formatting: Kod musi przechodzić walidację `ruff` (linting i formatowanie) oraz `mypy` (typowanie).
@@ -29,8 +28,8 @@ Rozwój i Jakość Kodu (CI/CD)
 
 CI/CD Verification Checklist
 Przed każdą publikacją (Release/Tag) wykonaj:
-1.  [ ] Linting: `ruff check custom_components/familyhub` (musi być czysto).
-2.  [ ] Formatting: `ruff format --check custom_components/familyhub` (musi być sformatowane).
+1.  [ ] Linting: `ruff check .` (musi być czysto).
+2.  [ ] Formatting: `ruff format --check .` (musi być sformatowane).
 3.  [ ] Typing: `mypy --ignore-missing-imports custom_components/familyhub` (brak błędów typów).
 4.  [ ] Validation: `hassfest` (struktura i manifest).
 5.  [ ] Commit: Upewnij się, że zmiany są zacommitowane przed tagowaniem.
@@ -52,6 +51,6 @@ Packaging (HACS)
 - README i odznaki renderowane w HACS po stronie repozytorium (ZIP nie musi zawierać README).
 
 Auto Fix / Auto Branch Fix
-- Kolejność kroków: `autoflake` → `ruff --fix` → `black` (79) → `isort` (79).
+- Kolejność kroków: `autoflake` → `ruff --fix` → `ruff format`.
 - PR/push poza main: automatyczny commit poprawek; na main tylko sprawdzanie.
 - Autofix PR: włącz auto‑merge po zielonych checkach (preferuj squash).
