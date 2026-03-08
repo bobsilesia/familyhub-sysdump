@@ -10,11 +10,11 @@ upload_media:
     path:
       required: true
       selector:
-        text:
+        text: {}
     content_type:
       required: false
       selector:
-        text:
+        text: {}
 execute:
   name: Execute raw SmartThings command
   description: Sends a raw command to the Family Hub via SmartThings
@@ -22,19 +22,19 @@ execute:
     component:
       required: true
       selector:
-        text:
+        text: {}
     capability:
       required: true
       selector:
-        text:
+        text: {}
     command:
       required: true
       selector:
-        text:
+        text: {}
     arguments:
       required: false
       selector:
-        object:
+        object: {}
 set_ice_maker:
   name: Set ice maker state
   description: Turns ice maker on/off

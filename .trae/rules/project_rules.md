@@ -34,6 +34,11 @@ Przed każdą publikacją (Release/Tag) wykonaj:
 4.  [ ] Validation: `hassfest` (struktura i manifest).
 5.  [ ] Commit: Upewnij się, że zmiany są zacommitowane przed tagowaniem.
 
+Stabilność CI (Zero Tolerance for Red)
+- Priorytet: "Zielone" Actions są najważniejsze. Jeśli build nie przechodzi, natychmiast napraw błędy.
+- Nie publikuj nowych funkcji, dopóki CI nie jest naprawione.
+- Monitoruj status Actions po każdym wypchnięciu (push) i reaguj na błędy (np. hassfest validation, linter errors).
+
 Polling i RS232
 - Domyślny polling: 30 s (DataUpdateCoordinator.update_interval) dla sensorów i kamery.
 - Cel: unikanie przeciążenia interfejsów (RS232/API) zbyt częstymi zapytaniami.
