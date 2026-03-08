@@ -1,12 +1,12 @@
 {
   "domain": "familyhub",
   "name": "Samsung Family Hub",
-  "version": "1.1.0",
-  "iot_class": "cloud_polling",
-  "config_flow": true,
-  "requirements": [],
   "codeowners": [
     "@robertpsiurski"
   ],
-  "documentation": "https://github.com/bobsilesia/familyhubdump"
+  "config_flow": true,
+  "documentation": "https://github.com/bobsilesia/familyhubdump",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "1.1.0"
 }
