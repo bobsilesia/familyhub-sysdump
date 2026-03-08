@@ -18,13 +18,21 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install quality tools
-        run: pip install flake8 ruff black isort autoflake
+        run: pip install flake8 ruff black isort autoflake mypy
       - name: Auto fix (in-runner, no commit)
         run: |
           autoflake --remove-all-unused-imports --in-place --recursive .
           ruff check --fix .
           black . --line-length 79
           isort . --line-length 79
+      - name: Formatting check (ruff)
+        run: ruff format --check .
+      - name: Lint check (ruff)
+        run: ruff check .
+      - name: Type check (mypy)
+        run: python -m mypy custom_components/familyhub
+      - name: Hassfest validation
+        uses: home-assistant/actions/hassfest@master
       - name: Lint
         run: flake8 custom_components/familyhub
       - name: Syntax check
