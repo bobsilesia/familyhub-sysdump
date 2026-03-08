@@ -28,25 +28,18 @@ jobs:
           python-version: "3.11"
 
       - name: Install tools
-        run: pip install ruff black isort flake8 autoflake
+        run: pip install ruff autoflake
 
       - name: Run ruff fix
         run: |
           autoflake --remove-all-unused-imports --in-place --recursive .
           ruff check --fix .
-      - name: Remove unused imports (autoflake)
-        run: autoflake --remove-all-unused-imports --in-place --recursive .
-
-      - name: Run black (79 cols)
-        run: black . --line-length 79
-
-      - name: Run isort (79 cols)
-        run: isort . --line-length 79
+          ruff format .
 
       - name: Lint check (non-blocking)
-        run: flake8 custom_components/familyhub || true
+        run: ruff check . || true
 
       - name: Auto commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "style: auto format (ruff/black/isort) via CI"
+          commit_message: "style: auto format (ruff) via CI"

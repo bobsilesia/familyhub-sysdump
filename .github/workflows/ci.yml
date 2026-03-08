@@ -22,8 +22,8 @@ jobs:
       - name: Auto fix (in-runner, no commit)
         run: |
           autoflake --remove-all-unused-imports --in-place --recursive .
-          ruff format .
           ruff check --fix .
+          ruff format .
       - name: Formatting check (ruff)
         run: ruff format --check .
       - name: Lint check (ruff)

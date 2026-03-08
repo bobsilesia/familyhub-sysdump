@@ -47,10 +47,8 @@ set_ice_maker:
       selector:
         select:
           options:
-            - label: "On"
-              value: "on"
-            - label: "Off"
-              value: "off"
+            - "on"
+            - "off"
 reset_filter:
   name: Reset water filter counter
   description: Resets the filter life counter on the refrigerator
@@ -70,10 +68,8 @@ set_power_cool:
       selector:
         select:
           options:
-            - label: "On"
-              value: "on"
-            - label: "Off"
-              value: "off"
+            - "on"
+            - "off"
 set_power_freeze:
   name: Set Power Freeze
   description: Turns Power Freeze mode on/off
@@ -86,7 +82,5 @@ set_power_freeze:
       selector:
         select:
           options:
-            - label: "On"
-              value: "on"
-            - label: "Off"
-              value: "off"
+            - "on"
+            - "off"

@@ -52,6 +52,6 @@ Packaging (HACS)
 - README i odznaki renderowane w HACS po stronie repozytorium (ZIP nie musi zawierać README).
 
 Auto Fix / Auto Branch Fix
-- Kolejność kroków: `autoflake` → `ruff format` → `ruff --fix` (w tym sortowanie importów).
+- Kolejność kroków: `autoflake` → `ruff --fix` → `black` (79) → `isort` (79).
 - PR/push poza main: automatyczny commit poprawek; na main tylko sprawdzanie.
 - Autofix PR: włącz auto‑merge po zielonych checkach (preferuj squash).
