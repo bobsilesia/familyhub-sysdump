@@ -2,11 +2,6 @@ upload_media:
   name: Upload media to Family Hub
   description: Uploads an image or video to Family Hub
   fields:
-    entity_id:
-      required: true
-      selector:
-        entity:
-          domain: camera
     path:
       required: true
       selector:
