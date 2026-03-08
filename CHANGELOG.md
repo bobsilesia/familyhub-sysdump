@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.10
+- Fix `hassfest` validation: Reorder `manifest.json` keys (domain, name, then alphabetical).
+
 ## 1.1.9
 - Fix `hassfest` validation: Remove core dependency `aiohttp` from requirements.
 - Fix `hassfest` validation: Remove invalid `target: sensor` from services (services are global per config entry).
